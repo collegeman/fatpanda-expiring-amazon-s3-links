@@ -32,8 +32,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 define('FPEAS3', __FILE__);
 define('FPEAS3_DIR', dirname(__FILE__));
 
-@define('FPEAS3_AWS_S3_ACCESS_ID', '1STCPYD7T2ERT3R2P682');
-@define('FPEAS3_AWS_S3_SECRET', 'B7EmYwFhKJt73PW6JplhSamGWBCU0ahCsMknFeVz');
+@define('FPEAS3_AWS_S3_ACCESS_ID', '');
+@define('FPEAS3_AWS_S3_SECRET', '');
 
 add_action('init', 'fpeas3_init');
 
@@ -41,12 +41,16 @@ function fpeas3_init() {
   add_shortcode('s3', 'fpeas3_shortcode');
 }
 
-function fpeas3_shortcode($atts, $content = 'Download') {
+function fpeas3_shortcode($atts, $content = null) {
   extract(shortcode_atts(array(
     'expires' => '5',
     'bucket' => '',
     'path' => ''
   ), $atts));
+
+  if (!$content = trim($content)) {
+    $content = 'Download';
+  }
 
   $keys = array(
     'access_id' => get_post_meta(get_the_ID(), 'aws_s3_access_id', true),
@@ -67,7 +71,7 @@ function fpeas3_shortcode($atts, $content = 'Download') {
     }
   }
 
-  return sprintf('<a rel="nofollow" href="%s" class="s3-temp-link">Download</a>', 
+  return sprintf('<a rel="nofollow" href="%s" class="s3-temp-link">%s</a>', 
     fpeas3_get_temporary_link($keys['access_id'], $keys['secret'], $bucket, $path, $expires), $content);
 }
 

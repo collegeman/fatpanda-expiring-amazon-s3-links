@@ -4,7 +4,7 @@ Donate link: http://fatpandadev.com
 Tags: amazon, s3, aws, temporary links, shortcode, private
 Requires at least: 2.9
 Tested up to: 3.4
-Stable tag: 0.1
+Stable tag: 0.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,7 +31,7 @@ will expire after one hour:
 
 `[s3 bucket="your-S3-bucket" path="/path/to/file" expires="60"]Download![/s3]`
 
-Following **Installation* instructions to get this plugin up and running.
+Following **Installation** instructions to get this plugin up and running.
 
 
 == Installation ==
@@ -50,36 +50,8 @@ in the Post or Page you're adding links to: `aws_s3_access_id` and `aws_s3_secre
 
 == Changelog ==
 
+= 0.1.1 =
+* Doc tweak
+
 = 0.1 =
 * First release
-
-== Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above.  This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation."  Arbitrary sections will be shown below the built-in sections outlined above.
-
-== A brief Markdown Example ==
-
-Ordered list:
-
-1. Some feature
-1. Another feature
-1. Something else about the plugin
-
-Unordered list:
-
-* something
-* something else
-* third thing
-
-Here's a link to [WordPress](http://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown syntax].
-Titles are optional, naturally.
-
-[markdown syntax]: http://daringfireball.net/projects/markdown/syntax
-            "Markdown is what the parser uses to process much of the readme file"
-
-Markdown uses email style notation for blockquotes and I've been told:
-> Asterisks for *emphasis*. Double it up  for **strong**.
-
-`<?php code(); // goes in backticks ?>`

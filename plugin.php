@@ -5,7 +5,7 @@ Plugin URI: http://github.com/collegeman/fatpanda-expiring-amazon-s3-links
 Description: A shortcode for generating temporary links to things stored privately on Amazon S3.
 Author: Fat Panda, LLC
 Author URI: http://fatpandadev.com
-Version: 0.1
+Version: 0.1.1
 License: GPL2
 */
 
